@@ -28,7 +28,7 @@ test_strings = ["Simba and Nala are lions.",
                 "Hakuna matata", 
                 "Timon, Pumba and Simba are friends, but Simba could eat the other two."]
 
-count_simba(test_strings)
+print(count_simba(test_strings))
 
 
 
@@ -56,7 +56,7 @@ def get_day_month_year(dates):
 test_dates = [datetime.date(2021, 1, 10), 
               datetime.date(2022, 2, 20),
               datetime.date(2023, 3, 30)]
-get_day_month_year(test_dates)
+print(get_day_month_year(test_dates))
 
 
 
@@ -79,7 +79,7 @@ def compute_distance(coords):
 # Test the function
 test_coords = [((41.23,23.5), (41.5, 23.4)), 
                ((52.38, 20.1),(52.3, 17.8))]
-compute_distance(test_coords)
+print(compute_distance(test_coords))
 
 
 #################################################
@@ -93,3 +93,13 @@ compute_distance(test_coords)
 # for instance for list_1=[[2], 3, [[1,2],5]] 
 # the result should be 13
 
+def sum_general_int_list(sum_list):
+    if type(sum_list) != list:
+        return sum_list
+    if sum_list == []:
+        return 0
+    return sum_general_int_list(sum_list[0]) + sum_general_int_list(sum_list[1:])
+
+
+list_int = [[2], 4, 5, [1, [2], [3, 5, [7,8]], 10], 1]
+print(sum_general_int_list(list_int))
