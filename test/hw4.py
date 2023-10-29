@@ -125,8 +125,10 @@ class Deck:
         if len(self.cards) > 0: #we need to check that there are still cards left on the deck!!
             card = self.cards.pop() #when we draw one, remove it from the deck
             print("Drawn Card: ", card.value, " of ", card.suit)
+            return card 
         else:
             print("The deck is empty.")
+            return None
 
 
 ###################
